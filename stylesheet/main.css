@@ -1,0 +1,383 @@
+html {
+    height: 100%;
+    font-family: Calibri, Helvetica, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: #f9f9f9;
+    background: url(../images/hypnotize.png);
+    background-size: 200px;
+    background-position: center;
+}
+
+body.loginPage {
+    background-color: #a8bbcc;
+}
+
+a {
+    color: rgb(89, 141, 192);
+}
+
+.login {
+    text-align: center;
+    position: absolute;
+    right: 16px;
+    box-sizing: border-box;
+    max-width: 416px;
+    height: 100%;
+    background: white;
+    padding: 16px;
+    box-shadow: 0 0 32px rgba(0,0,0,0.5);
+}
+
+@media screen and (max-width: 416px) {
+    .login {
+        width: 100%;
+        right: 0;
+    }
+}
+
+.login input, .login button {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    background: #eee;
+    transition: 0.5s background ease;
+}
+
+.login input:hover {
+    background: #f9f9f9;
+}
+
+.login input[type=submit] {
+    background: #ccc;
+}
+
+.login input[type=submit]:hover {
+    background: #eee;
+}
+
+.login button {
+    display: none;
+    background: transparent;
+    border: 2px solid #369;
+    color: #369;
+    padding: 14px;
+    transition: 0.5s ease border-color, 0.5s ease color;
+}
+
+.login button:hover {
+    border-color: rgb(157, 188, 219);
+    color: rgb(157, 188, 219);
+}
+
+.registerForm input[type=submit] {
+    width: calc(50% - 4px);
+}
+
+.registerForm button {
+    display: inline-block;
+    width: calc(50% - 4px);
+    margin-left: 8px;
+}
+
+.legal {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 16px;
+}
+
+/* Chat */
+main.chat {
+    display: inline-block;
+    width: calc(100% - 256px);
+    height: 100%;
+}
+
+.chatlog {
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100% - 100px);
+    padding: 32px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.chatlog p {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    background: rgb(119, 169, 216);
+    text-align: center;
+}
+
+.chatlog div {
+    margin: 8px 0;
+    text-align: left;
+}
+
+.chatlog div span {
+    text-align: justify;
+    max-width: 600px;
+    display: inline-block;
+    border-radius: 0 16px 16px 16px;
+    background: rgb(119, 169, 216);
+    color: white;
+    padding: 8px;
+}
+
+.chatlog div.right {
+    text-align: right;
+}
+
+.chatlog div.right span {
+    border-radius: 16px 16px 0px 16px;
+    background: rgb(73, 116, 156);
+}
+
+.chatsubmit {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px;
+}
+
+.chatsubmit textarea {
+    width: calc(100% - 72px);
+    height: 64px;
+    padding: 8px;
+    box-sizing: border-box;
+    resize: none;
+    border-radius: 16px;
+}
+
+.chatsubmit input {
+    width: 64px;
+    height: 64px;
+    margin-left: 8px;
+    border-radius: 50%;
+    border: none;
+    vertical-align: top;
+    background: #369;
+    color: white;
+}
+
+/* Workflows */
+.workflowPage {
+    background-color: #a8bbcc;
+}
+
+main.workflows {
+    width: calc(100% - 256px);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.workflows > section {
+    display: inline-block;
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    width: 100%;
+    max-width: 400px;
+    max-height: calc(100% - 64px);
+    overflow-y: auto;
+    vertical-align: top;
+    white-space: normal;
+}
+
+@media screen and (max-width: 440px) {
+    body {
+        overflow: hidden;
+    }
+
+    main.workflows {
+        overflow-x: hidden;
+        padding: 8px;
+    }
+
+    .workflows > section {
+        margin: 8px;
+        width: calc(100% - 64px);
+    }
+}
+
+.workflows hr {
+    border: none;
+    background: #d9d9d9;
+    height: 1px;
+    margin: 0;
+}
+
+.workflows > section h2 {
+    margin: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.workflows > section div, .workflows > section label {
+    display: block;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 8px 0;
+    background: #f9f9f9;
+    transition: 0.5s ease background;
+}
+
+.workflows > section div:hover {
+    background: #eee;
+}
+
+.workflows > section input[type=checkbox] {
+    margin-right: 8px;
+}
+
+.workflows > section input[type=text], 
+.workflows > section input[type=submit] {
+    box-sizing: border-box;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 8px 0;
+    transition: 0.5s ease background;
+}
+
+.workflows > section input[type=text] {
+    width: calc(100% - 72px);
+    background: #eee;
+}
+
+.workflows > section input[type=text]:hover {
+    background: #ddd;
+}
+
+.workflows > section input[type=submit] {
+    margin-left: 8px;
+    padding: 8px 4px;
+    width: 64px;
+    background: rgb(119, 169, 216);
+}
+
+.workflows > section input[type=submit]:hover {
+    background: rgb(73, 116, 156);
+}
+
+/* ;) */
+nav {
+    display: inline-block;
+    width: 256px;
+    height: 100%;
+    background: #f9f9f9;
+    vertical-align: top;
+    box-shadow: 0 0 32px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+}
+
+nav > div {
+    background: white;
+    width: 100%;
+    box-shadow: 0 0 32px rgba(0,0,0,0.05);
+}
+
+nav > h2 {
+    height: 48px;
+    margin: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    background: white;
+    position: relative;
+    z-index: 1;
+}
+
+nav > div:nth-child(2) {
+    overflow: auto;
+    max-height: calc(100% - 147px);
+}
+
+nav > div:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+}
+
+nav > div > h2 {
+    margin: 0;
+    padding: 8px;
+    text-align: center;
+}
+
+nav > div > * {
+    display: block;
+    text-decoration: none;
+    padding: 8px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    transition: 0.5s ease padding, 0.5s ease background, 0.3s ease transform, 0.8s ease box-shadow;
+    cursor: pointer;
+}
+
+nav > div > *:hover {
+    padding-left: 16px;
+    background: #cfddeb;
+    box-shadow: 0 0 32px #cfddeb;
+}
+
+nav > div > * > div {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+nav > div > * > div {
+    background-color: #cfddeb;
+}
+
+nav > div:nth-child(3) > *:nth-child(1) > div {
+    background-image: url(../images/add.png);
+}
+
+nav > div:nth-child(3) > *:nth-child(2) > div {
+    background-image: url(../images/settings.png);
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        width: 48px;
+    }
+
+    main.chat {
+        width: calc(100% - 48px);
+    }
+
+    nav > h2 {
+        display: none;
+    }
+
+    nav > div > div:hover {
+        padding-left: 8px;
+        transform: scale(1.1);
+    }
+
+    nav span {
+        display: none;
+    }
+}
