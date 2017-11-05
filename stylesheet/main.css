@@ -101,6 +101,10 @@ main.chat {
     display: inline-block;
     width: calc(100% - 256px);
     height: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    overflow: hidden;
 }
 
 .chatlog {
@@ -149,6 +153,7 @@ main.chat {
     box-sizing: border-box;
     width: 100%;
     padding: 16px;
+    position: relative;
 }
 
 .chatsubmit textarea {
@@ -158,9 +163,10 @@ main.chat {
     box-sizing: border-box;
     resize: none;
     border-radius: 16px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
 
-.chatsubmit input {
+.chatsubmit button {
     width: 64px;
     height: 64px;
     margin-left: 8px;
@@ -168,7 +174,37 @@ main.chat {
     border: none;
     vertical-align: top;
     background: #369;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.chatsubmit > button {
+    background-image: url(../images/attach.png);
+}
+
+#attachMenu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 104px;
+    background: white;
+    box-shadow: 0 0 24px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    padding: 16px;
+    opacity: 1;
+    transition: bottom 0.3s ease, box-shadow 0.8s ease;
+}
+
+#attachMenu > button:last-child {
+    float: right;
+}
+
+#attachMenu.hideAttach {
+    bottom: -104px;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
 /* Workflows */
@@ -229,7 +265,7 @@ main.workflows {
     border-bottom: 1px solid #eee;
 }
 
-.workflows > section div, .workflows > section label {
+.workflows > section > label {
     display: block;
     padding: 8px;
     border-radius: 8px;
@@ -238,7 +274,7 @@ main.workflows {
     transition: 0.5s ease background;
 }
 
-.workflows > section div:hover {
+.workflows > section > label:hover {
     background: #eee;
 }
 
@@ -274,6 +310,28 @@ main.workflows {
 
 .workflows > section input[type=submit]:hover {
     background: rgb(73, 116, 156);
+}
+
+.workflows > section > label > div {
+    float: right;
+    margin-top: -4px;
+    margin-left: 4px;
+    width:      28px;
+    height:     28px;
+    background: rgb(179, 204, 228) url(../images/garbage.png);
+    border-radius: 50%;
+    background-size: cover;
+    cursor: pointer;
+    transition: 0.5s ease background, 0.3s ease opacity;
+    opacity: 0;
+}
+
+.workflows > section > label:hover > div {
+    opacity: 1;
+}
+
+.workflows > section > label > div:hover {
+    background-color: rgb(119, 169, 216);
 }
 
 /* ;) */

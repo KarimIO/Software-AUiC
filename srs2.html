@@ -44,8 +44,24 @@
             <div class='right'><span>Take a seat young Skywalker.</span></div>
             <div><span>Forgive me, Master.</span></div>
         </section><section class="chatsubmit">
-            <textarea></textarea><input type="submit" />
+            <textarea></textarea><button onclick="showAttach()" id='chatSide'></button>
+            <div id="attachMenu" class="hideAttach">
+                <button>Phone</button>
+                <button>Video</button>
+                <button>Image</button>
+                <button>Send Money</button>
+                <button onclick="hideAttach()" id='cancelAttach'>X</button>
+            </div>
         </section>
     </main>
+    <script>
+        function showAttach() {
+            document.getElementById("attachMenu").className = "";
+        }
+
+        function hideAttach() {
+            document.getElementById("attachMenu").className = "hideAttach";
+        }
+    </script>
 </body>
 </html>
