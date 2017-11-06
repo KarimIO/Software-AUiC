@@ -98,13 +98,16 @@ a {
 
 /* Chat */
 main.chat {
-    display: inline-block;
-    width: calc(100% - 256px);
-    height: 100%;
     margin: 0;
     padding: 0;
-    vertical-align: top;
     overflow: hidden;
+}
+
+.chatSide main {
+    display: inline-block;
+    height: 100%;
+    width: calc(100% - 256px);
+    vertical-align: top;
 }
 
 .chatlog {
@@ -208,7 +211,7 @@ main.chat {
 }
 
 /* Workflows */
-.workflowPage {
+.blueBackPage {
     background-color: #a8bbcc;
 }
 
@@ -334,6 +337,60 @@ main.workflows {
     background-color: rgb(119, 169, 216);
 }
 
+/* Transactions */
+
+.transactions {
+    overflow-y: auto;
+}
+
+.transactions section {
+    background: white;
+    border-radius: 8px;
+    margin: 32px;
+    padding: 8px;
+}
+
+.transactions h2 {
+    border-bottom: 1px solid #eee;
+    margin: 0;
+    padding: 4px;
+}
+
+.transactions span {
+    float: right;
+    width: 200px;
+    text-align: right;
+}
+
+.transactions h2 {
+    font-size: 1.6em;
+}
+
+.transactions h3 {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+}
+
+.transactions p {
+    margin: 0;
+}
+
+.transactions div {
+    padding-left: 16px;
+    border-bottom: 1px solid #eee;
+    min-height: 5em;
+}
+
+.transactions div:last-child {
+    border:none;
+}
+
+.transactions h2 a {
+    font-size: 70%;
+    vertical-align: middle;
+}
+
 /* ;) */
 nav {
     display: inline-block;
@@ -363,8 +420,8 @@ nav > h2 {
 }
 
 nav > div:nth-child(2) {
-    overflow: auto;
-    max-height: calc(100% - 147px);
+    overflow: visible;
+    max-height: calc(100% - 196px);
 }
 
 nav > div:nth-child(3) {
@@ -379,12 +436,13 @@ nav > div > h2 {
 }
 
 nav > div > * {
+    position: relative;
     display: block;
     text-decoration: none;
     padding: 8px;
     color: #333;
     border-bottom: 1px solid #eee;
-    transition: 0.5s ease padding, 0.5s ease background, 0.3s ease transform, 0.8s ease box-shadow;
+    transition: 0.5s ease padding, 0.5s ease background, 0.8s ease box-shadow;
     cursor: pointer;
 }
 
@@ -403,6 +461,7 @@ nav > div > * > div {
     border-radius: 50%;
     background-size: cover;
     background-position: center;
+    transition:  0.3s ease transform;
 }
 
 nav > div > * > div {
@@ -414,6 +473,10 @@ nav > div:nth-child(3) > *:nth-child(1) > div {
 }
 
 nav > div:nth-child(3) > *:nth-child(2) > div {
+    background-image: url(../images/transaction.png);
+}
+
+nav > div:nth-child(3) > *:nth-child(3) > div {
     background-image: url(../images/settings.png);
 }
 
@@ -422,7 +485,7 @@ nav > div:nth-child(3) > *:nth-child(2) > div {
         width: 48px;
     }
 
-    main.chat {
+    .chatSide main {
         width: calc(100% - 48px);
     }
 
@@ -432,10 +495,33 @@ nav > div:nth-child(3) > *:nth-child(2) > div {
 
     nav > div > div:hover {
         padding-left: 8px;
+    }
+
+    nav > div > div:hover > div {
         transform: scale(1.1);
     }
 
     nav span {
         display: none;
     }
+}
+
+nav aside {
+    background: red;
+    border: 1px solid #c00;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 14px;
+    right: 0;
+    opacity: 0;
+    transition: 0.5s ease opacity, 0.5s ease right;
+}
+
+nav aside.shown {
+    opacity: 1;
+    right: -8px;
 }
