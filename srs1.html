@@ -8,14 +8,26 @@
     <title>Document</title>
 </head>
 <body class='loginPage'>
-    <form class='login registerForm'>
+    <div class='login'>
         <h1>[Business name]</h1>
-        <p>Please enter your login credentials to join us!</p>
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <input type="submit" /><button>Register</button>
-        <a href="javascript:void()">Forgot Password</a>
-        <span class="legal">Copyright 2017, AUiC - <a href="javascript:void()">Terms of Use</a></span>
-    </form>
+        <form id='registerForm'>
+                <p>Please enter your login credentials to join us!</p>
+                <input type="text" placeholder="Username" />
+                <input type="password" placeholder="Password" />
+                <input type="submit" />
+                <a href="javascript:forgotPassword()">Forgot Password</a>
+        </form><form id='forgotForm'>
+                <p>Please enter the email you'd like to recover.</p>
+                <input type="email" placeholder="Email to Recover" />
+                <input type="button" onclick="recoverRequest()" value='Recover Password' />
+                <a href="javascript:returnToLogin()">Return to login</a>
+        </form>
+        <span class="legal">
+            <div id='recoverRequest'>Email sent to <span>email@domain.com</span>. Login upon verification.</div>
+            Copyright 2017, AUiC - <a href="javascript:void()">Terms of Use</a>
+        </span>
+    </div>
+    <script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="javascript/main.js"></script>
 </body>
 </html>

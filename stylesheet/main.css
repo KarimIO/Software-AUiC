@@ -1,3 +1,13 @@
+#registerForm {
+    display: none;    
+}
+
+#recoverRequest {
+    display: none;
+    color: #d00;
+    padding: 1em 0;
+}
+
 html {
     height: 100%;
     font-family: Calibri, Helvetica, 'Trebuchet MS', sans-serif;
@@ -55,11 +65,11 @@ a {
     background: #f9f9f9;
 }
 
-.login input[type=submit] {
+.login input[type=submit], .login input[type=button] {
     background: #ccc;
 }
 
-.login input[type=submit]:hover {
+.login input[type=submit]:hover, .login input[type=button]:hover {
     background: #eee;
 }
 
@@ -150,6 +160,63 @@ main.chat {
 .chatlog div.right span {
     border-radius: 16px 16px 0px 16px;
     background: rgb(73, 116, 156);
+}
+
+.chatlog button {
+    display: inline-block;
+    height: 0;
+    width: 0;
+    padding: 0;
+    background: none;
+    border-left: 16px solid white;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: none;
+}
+
+.chatlog input[type='range'] {
+    display: inline-block;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.chatlog input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%; 
+    background: white;
+    border: 2px solid #ddd;
+    cursor: pointer;
+}
+
+.chatlog input[type='range']::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #ddd;
+    cursor: pointer;
+}
+
+.chatlog .time {
+    float:right;
+    vertical-align: middle;
+}
+
+.chatlog a {
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: white;
 }
 
 .chatsubmit {
