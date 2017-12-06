@@ -595,24 +595,43 @@ nav aside.shown {
 
 /* Admin */
 
+hr {
+    height: 0;
+    border: none;
+    border-bottom: 1px solid #999;
+}
+
 .admin main {
+    position: relative;
     width: 100%;
     height: calc(100% - 3rem);
+}
+
+.admin button {
+    padding: 0.8em;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid #eee;
+    background: #ddd;
 }
 
 .admin main section {
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    background: #fff;
 }
 
 .admin nav {
     width: 100%;
-    height: auto;
+    height: 3rem;
 }
 
 .admin nav select {
     width: 100%;
-    padding: 0.5em;
+    padding: 0.5rem;
+    height: 3rem;
 }
 
 .admin nav ul {
@@ -641,12 +660,16 @@ nav aside.shown {
     margin: 0;
 }
 
-.admin table {
+.admin div {
     vertical-align: top;
     display: inline-block;
     width: 70%;
     height: 100%;
-    background: #fff;
+}
+
+.admin table {
+    width: 100%;
+    max-height: 100%;
 }
 
 .admin thead {
@@ -668,4 +691,37 @@ nav aside.shown {
 
 .admin tbody tr:nth-child(odd) {
     background: rgba(0,0,0,0.03);
+}
+
+.admin .manage select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 10em;
+    margin: 0.2em 0;
+}
+
+.admin .manage > input[type=text],
+.admin .manage > input[type=submit] {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0.5em;
+    margin: 0.2em 0;
+}
+
+.admin .manage fieldset div {
+    -webkit-column-width: 15em; /* Chrome, Safari, Opera */
+    -moz-column-width: 15em; /* Firefox */
+    column-width: 15em;
+}
+
+#deleteButton {
+    width: 100%;
+}
+
+.admin .manage option {
+    padding: 0.5em;
+}
+
+.admin .manage label {
+    display: block;
 }
