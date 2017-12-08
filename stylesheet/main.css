@@ -621,6 +621,11 @@ hr {
     position: absolute;
     top: 0;
     background: #fff;
+	display: none;
+}
+
+.admin main section.show {
+	display: block;
 }
 
 .admin nav {

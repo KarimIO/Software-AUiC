@@ -11,25 +11,19 @@
 
 <body class='admin'>
     <nav>
-        <select>
-            <option>Select User</option>
-            <option>Manage Company</option>
-            <option>View All Transactions</option>
+        <select id="mainSel">
+            <option value="1" selected>Select User</option>
+            <option value="2">Manage Company</option>
+            <option value="3">View All Transactions</option>
             <optgroup label="User: Karim Abdel Hamid">
-                <option>About Karim Abdel Hamid</option>
-                <option>Check Transactions</option>
-                <option>Access History</option>
+                <option value="4">About Karim Abdel Hamid</option>
+                <option value="5">Check Transactions</option>
+                <option value="6">Access History</option>
             </optgroup>
         </select>
-        <ul>
-            <option>Select</option>
-            <option>About Karim Abdel Hamid</option>
-            <option>Check Transactions</option>
-            <option>Access History</option>
-        </ul>
     </nav>
     <main>
-        <section>
+        <section class='show'>
             <form class='manage'>
                 <h2>Manage Privilege Types</h2>
                 <select size=8>
@@ -135,6 +129,18 @@
             </div>
         </section>
     </main>
+    	<script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
+	<script>
+		$("#mainSel").change(function(e) {
+			var target = "section:nth-child(" + $("#mainSel option:selected").val() + ")";
+			$("section").removeClass("show");
+			$(target).addClass("show");
+		});
+		
+		$("thead input").change(function(e) {
+			alert($(this).selected());
+		});
+	</script>
 </body>
 
 </html>
