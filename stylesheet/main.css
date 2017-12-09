@@ -677,6 +677,26 @@ hr {
     max-height: 100%;
 }
 
+@media screen and (max-width: 416px) {
+    .admin section {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .admin aside {
+        width: 100%;
+        height: auto;
+    }
+    .admin div {
+        width: 100%;
+        overflow: hidden;
+    }
+    .admin table {
+        width: 100%;
+        overflow: scroll;
+    }
+}
+
+
 .admin thead {
     font-weight: bold;
 }
@@ -685,12 +705,13 @@ hr {
     width: auto;
 }
 
-.admin td {
+.admin td, .admin th {
     border-right: 2px solid #ccc;
     padding: 0.5em;
+    text-align: center;
 }
 
-.admin td:last-child {
+.admin td:last-child, .admin th:last-child {
     border: none;
 }
 

@@ -23,36 +23,7 @@
         </select>
     </nav>
     <main>
-        <section class='show'>
-            <form class='manage'>
-                <h2>Manage Privilege Types</h2>
-                <select size=8>
-                    <option disabled>Super Admin</option>
-                    <option>Financial Admin</option>
-                    <option>Workflow Manager</option>
-                    <option>Default Employee</option>
-                    <option>Client</option>
-                </select><br />
-                <input type=text placeholder="Admin Type Name"/><input type=submit value="Add Admin Type"/>
-                <input type=submit id="deleteButton" value="Delete"/>
-                <fieldset>
-                    <legend>Features</legend>
-                    <div>
-                        <label for='p1'><input type=checkbox id='p1'/>Manage Types of Users</label>
-                        <label for='p2'><input type=checkbox id='p2'/>Add Users</label>
-                        <label for='p1'><input type=checkbox id='p1'/>Set Users' Types</label>
-                        <label for='p3'><input type=checkbox id='p3'/>Remove Users</label>
-                        <label for='p4'><input type=checkbox id='p4'/>Request AUiC Support</label>
-                        <label for='p5'><input type=checkbox id='p5'/>Audit Messages</label>
-                        <label for='p6'><input type=checkbox id='p6'/>Send Videos</label>
-                        <label for='p6'><input type=checkbox id='p7'/>Request Transaction</label>
-                        <label for='p6'><input type=checkbox id='p8'/>View Transactions</label>
-                        <label for='p6'><input type=checkbox id='p9'/>View All Transactions</label>
-                        <label for='p6'><input type=checkbox id='p10'/>Manage Transactions</label>
-                    </div>
-                </fieldset>
-            </form>
-        </section><section>
+        <section class="show">
             <aside>
                 <h2>Filtering</h2>
                 <form>
@@ -73,13 +44,13 @@
                 <table cellspacing=0>
                     <thead>
                         <tr>
-                            <td>First Name</td>
-                            <td>Last Name</td>
-                            <td>Email Address</td>
-                            <td>Phone Number</td>
-                            <td>Position</td>
-                            <td>View</td>
-                            <td><input type="checkbox" /></td>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email Address</th>
+                            <th>Phone Number</th>
+                            <th>Position</th>
+                            <th>View</th>
+                            <th><input id="checkall" type="checkbox" /></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -127,6 +98,35 @@
                     </tbody>
                 </table>
             </div>
+        </section><section>
+            <form class='manage'>
+                <h2>Manage Privilege Types</h2>
+                <select size=8>
+                    <option disabled>Super Admin</option>
+                    <option>Financial Admin</option>
+                    <option>Workflow Manager</option>
+                    <option>Default Employee</option>
+                    <option>Client</option>
+                </select><br />
+                <input type=text placeholder="Admin Type Name"/><input type=submit value="Add Admin Type"/>
+                <input type=submit id="deleteButton" value="Delete"/>
+                <fieldset>
+                    <legend>Features</legend>
+                    <div>
+                        <label for='p1'><input type=checkbox id='p1'/>Manage Types of Users</label>
+                        <label for='p2'><input type=checkbox id='p2'/>Add Users</label>
+                        <label for='p1'><input type=checkbox id='p1'/>Set Users' Types</label>
+                        <label for='p3'><input type=checkbox id='p3'/>Remove Users</label>
+                        <label for='p4'><input type=checkbox id='p4'/>Request AUiC Support</label>
+                        <label for='p5'><input type=checkbox id='p5'/>Audit Messages</label>
+                        <label for='p6'><input type=checkbox id='p6'/>Send Videos</label>
+                        <label for='p6'><input type=checkbox id='p7'/>Request Transaction</label>
+                        <label for='p6'><input type=checkbox id='p8'/>View Transactions</label>
+                        <label for='p6'><input type=checkbox id='p9'/>View All Transactions</label>
+                        <label for='p6'><input type=checkbox id='p10'/>Manage Transactions</label>
+                    </div>
+                </fieldset>
+            </form>
         </section>
     </main>
     	<script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
@@ -136,9 +136,39 @@
 			$("section").removeClass("show");
 			$(target).addClass("show");
 		});
+
+        function checkChecks(e) {
+            if ($("td input:not(:checked)").length != 0) {
+                if ($("td input:checked").length != 0) {
+                    $("th input").prop("checked", false);
+                    $("th input").prop("indeterminate", true);
+                }
+                else {
+                    $("th input").prop("checked", false);
+                    $("th input").prop("indeterminate", false);
+                }
+            }
+            else {
+                $("th input").prop("checked", true);
+                $("th input").prop("indeterminate", false);
+            }
+        }
 		
-		$("thead input").change(function(e) {
-			alert($(this).selected());
+		$("td input").change(checkChecks);
+
+        $(document).ready(function(e) {
+            checkChecks(e);
+            $("select").val(1);
+        });
+		
+		$("#checkall").change(function(e) {
+            $("th input").prop("indeterminate", false);
+			if (this.checked) {
+                $("td input:not(:checked)").click();
+            }
+            else {
+                $("td input:checked").click();
+            }
 		});
 	</script>
 </body>
