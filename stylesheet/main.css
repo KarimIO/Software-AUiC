@@ -183,6 +183,7 @@ main.chat {
 }
 
 .chatlog input[type='range'] {
+    box-sizing: border-box;
     display: inline-block;
     -webkit-appearance: none;
     width: 100%;
@@ -193,6 +194,7 @@ main.chat {
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    margin: 0;
 }
 
 .chatlog input[type='range']::-webkit-slider-thumb {
@@ -244,7 +246,9 @@ main.chat {
     box-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
 
-.chatsubmit button {
+.chatsubmit button, #attachMenu label {
+    text-align: center;
+    display: inline-block;
     width: 64px;
     height: 64px;
     margin-left: 8px;
@@ -256,6 +260,22 @@ main.chat {
     background-repeat: no-repeat;
     color: white;
     box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+#attachMenu > button:first-child {
+    background-image: url(../images/video.png);
+}
+
+#attachMenu > label {
+    background-image: url(../images/image.png);
+}
+
+#attachMenu > *:nth-child(4) {
+    background-image: url(../images/transaction.png);
+}
+
+#attachMenu > *:nth-child(5) {
+    background-image: url(../images/voice.png);
 }
 
 .chatsubmit > button {
@@ -297,6 +317,24 @@ main.chat {
     background-image: url(../images/hypnotize.png);
     background-size: 200px;
     background-position: center;
+    z-index: 99;
+    text-align: center;
+}
+
+#popupcontainer video {
+    vertical-align: middle;
+    max-width: 90%;
+    max-height: calc(100% - 6em);
+    margin: 3em 10%;
+}
+
+#popupcontainer button {
+    position: absolute;
+    left: 50%;
+    bottom: 1em;
+    width: 16em;
+    padding: 1em;
+    margin-left: -8em;
 }
 
 #popupcontainer > div {
@@ -341,9 +379,17 @@ main.chat {
 }
 
 #popupcontainer input[type=button], #popupcontainer input[type=submit] {
-    width: 50%;
+    width: 33.33%;
     background: #ccc;
     border: none;
+}
+
+.manager textarea {
+    height:calc(100% - 14em) !important;
+}
+
+.manager input[type=button], .manager input[type=submit] {
+    width: 25% !important;
 }
 
 #popupcontainer input[type=button] {
@@ -518,6 +564,18 @@ main.workflows {
 
 .transactions {
     overflow-y: auto;
+    width: 100%;
+}
+
+.transactions > a > button {
+    width: 100%;
+    padding: 0.5em;
+}
+
+@media screen and (max-width: 768px) {
+    .transactions {
+        font-size: 80%;
+    }
 }
 
 .transactions section {
@@ -596,12 +654,23 @@ nav > h2 {
     z-index: 1;
 }
 
-nav > div:nth-child(2) {
+nav > input {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border-radius: 0;
+    border: 1px solid #eee;
+    background: #f9f9f9;
+    border-left: 0;
+    border-right: 0;
+}
+
+nav > div:nth-child(3) {
     overflow: visible;
     max-height: calc(100% - 196px);
 }
 
-nav > div:nth-child(3) {
+nav > div:nth-child(4) {
     position: absolute;
     bottom: 0;
 }
@@ -645,15 +714,15 @@ nav > div > * > div {
     background-color: #cfddeb;
 }
 
-nav > div:nth-child(3) > *:nth-child(1) > div {
+nav > div:nth-child(4) > *:nth-child(1) > div {
     background-image: url(../images/add.png);
 }
 
-nav > div:nth-child(3) > *:nth-child(2) > div {
+nav > div:nth-child(4) > *:nth-child(2) > div {
     background-image: url(../images/transaction.png);
 }
 
-nav > div:nth-child(3) > *:nth-child(3) > div {
+nav > div:nth-child(4) > *:nth-child(3) > div {
     background-image: url(../images/settings.png);
 }
 
@@ -871,4 +940,25 @@ hr {
 .media {
     width: 80%;
     background-size: cover !important;
+}
+
+#imgUp {
+    width: 1px;
+    display: none;
+}
+
+.toasts {
+    width: 80%;
+    margin-left: 10%;
+    position: absolute;
+    z-index: 120;
+    top: 1em;
+}
+
+.toasts div {
+    border: 2px solid #900;
+    background: #c009;
+    padding: 0.5em;
+    border-radius: 6px;
+    color: white;
 }

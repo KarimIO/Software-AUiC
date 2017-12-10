@@ -5,14 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="stylesheet/main.css" rel="stylesheet">
-        <title>Document</title>
+        <title>AUiC Chat</title>
     </head>
     <body class="chatSide">
-        <div id='popupcontainer'>
-            <video></video>
+        <div id='popupcontainer' onclick="hideVideo()">
+            <video autoplay loop muted>
+                <source src="images/vid.webm" type="video/webm" />
+                Your browser does not support web calls.
+            </video>
+            <button>Connect to Google Glass</button>
         </div>
         <nav>
             <h2>AUiC Chat</h2>
+            <input type='search' placeholder='Search Users' />
             <div>
                 <div>
                     <div style="background-image: url(images/darthsidious.jpg);"></div>
@@ -33,7 +38,7 @@
                 </div>
             </div>
             <div>
-                <a href="srs3.html">
+                <a href="workflow_manager.html">
                     <div></div>
                     <span>Workflows</span>
                     <aside>0</aside>
@@ -76,14 +81,16 @@
             </section><section class="chatsubmit">
                 <textarea></textarea><button onclick="showAttach()" id='chatSide'></button>
                 <div id="attachMenu" class="hideAttach">
-                    <button>Phone Call</button>
-                    <button>Video Call</button>
-                    <button>Image</button>
-                    <button>Request Transaction</button>
+                    <button onclick="showVideo()"></button>
+                    <input type='file' id='imgUp' />
+                    <label for='imgUp'></label>
+                    <button onclick="sendPayment()"></button>
+                    <button></button>
                     <button onclick="hideAttach()" id='cancelAttach'>X</button>
                 </div>
             </section>
         </main>
+        <script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
         <script>
             function showAttach() {
                 document.getElementById("attachMenu").className = "";
@@ -91,6 +98,18 @@
 
             function hideAttach() {
                 document.getElementById("attachMenu").className = "hideAttach";
+            }
+
+            function sendPayment() {
+                var value = prompt("How much would you like to request?", "1000LE");
+            }
+            
+            function hideVideo() {
+                $("#popupcontainer").fadeOut(200);
+            }
+
+            function showVideo() {
+                $("#popupcontainer").fadeIn(200);
             }
         </script>
     </body>

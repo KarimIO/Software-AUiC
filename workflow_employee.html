@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="stylesheet/main.css" rel="stylesheet">
+    <title>My Workflows</title>
+</head>
+
+<body class='blueBackPage'>
+    <div id='popupcontainer'>
+        <div>
+            <h1 style='margin: 0;'>Process Name (In Progress)</h1>
+            <textarea placeholder="Process Description and Comments"></textarea>
+            <div>
+                <input onclick="javascript:hidePopup()" type='submit' value="Submit as Completed" /><input onclick="javascript:hidePopup()" type='submit' value="Save Changes" /><input onclick="javascript:hidePopup()" type='button' value="Cancel" />
+            </div>
+        </div>
+    </div>
+    <main class='workflows'>
+        <section class='settings'>
+            <a href="chat.html">
+                <button>
+                    < Back
+                </button>
+            </a>
+        </section>
+        <section>
+            <h2>Order 66</h2>
+            <span>
+                <div></div>
+                <input type='checkbox' disabled id="check1_1" />
+                <a href="javascript:void()">Put up your hood</a>
+            </span>
+            <span>
+                <div></div>
+                <input type='checkbox' disabled id="check1_2" />
+                <a href="javascript:void()">Kill the Younglings</a>
+            </span>
+        </section>
+        <section>
+            <h2>Anakin's Path to Success</h2>
+            <span>
+                <div></div>
+                <input type='checkbox' disabled id="check2_3" checked />
+                <a href="javascript:void()">Be a total badass</a>
+            </span>
+        </section>
+    </main>
+    <script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        function hidePopup() {
+            $("#popupcontainer").fadeOut(200);
+        }
+
+        function showPopup() {
+            $("#popupcontainer").fadeIn(200);
+        }
+
+        $("a").click(showPopup);
+    </script>
+</body>
+
+</html>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="stylesheet/main.css" rel="stylesheet">
-    <title>Document</title>
+    <title>AUiC Support Admin</title>
 </head>
 
 <body class='admin'>
@@ -15,8 +15,6 @@
             <option value="0">Leave Admin Page</option>
             <option value="1" selected>List Companies</option>
             <option value="2">Tickets</option>
-            <option value="3">View Transactions</option>
-            <option value="4">View Scheduled Transactions</option>
         </select>
     </nav>
     <main>
@@ -36,6 +34,10 @@
                     <input type='submit' />
                 </form>
                 <hr />
+                <input placeholder="Account Email" />
+                <button>Invite Account</button>
+                <hr />
+                With Selected:
                 <button>Remove Account(s)</button>
             </aside><div>
                 <table cellspacing=0>
@@ -64,7 +66,7 @@
                     <h2>Filter Tickets</h2>
                     <form>
                         <input type="search" placeholder="Search From" />
-                        <input type="search" placeholder="Search To" />
+                        <input type="search" placeholder="Search To" value="AUiC" />
                         <label for="searchdate"><input type="checkbox" id="searchdate"> Search by Date</label>
                         <input type="date" />
                         <input type="date" />
@@ -88,19 +90,19 @@
                         <tbody>
                             <tr>
                                 <td>Karim Abdel Hamid</td>
-                                <td>Kareem Farid</td>
+                                <td>AUiC</td>
                                 <td>Dec 9, 2017</td>
                                 <td><a href="javascript:alert('Message')">View Message</a></td>
                                 <td><input type="checkbox" /></td>
                             </tr><tr>
                                 <td>Kareem Farid</td>
-                                <td>Karim Abdel Hamid</td>
+                                <td>AUiC</td>
                                 <td>Dec 9, 2017</td>
                                 <td><a href="javascript:alert('Message')">View Message</a></td>
                                 <td><input type="checkbox" /></td>
                             </tr><tr>
                                 <td>Esraa</td>
-                                <td>Badr</td>
+                                <td>AUiC</td>
                                 <td>Dec 7, 2017</td>
                                 <td><a href="javascript:alert('Message')">View Message</a></td>
                                 <td><input type="checkbox" /></td>
@@ -108,106 +110,7 @@
                         </tbody>
                     </table>
                 </div>
-            </section><section>
-            <aside>
-                <h2>Filter Transactions</h2>
-                <form>
-                    <input type="search" placeholder="Search From" />
-                    <input type="search" placeholder="Search To" />
-                    <label for="searchdate"><input type="checkbox" id="searchdate"> Search by Date</label>
-                    <input type="date" />
-                    <input type="date" />
-                    <label for="searchamount"><input type="checkbox" id="searchamount"> Search by Amount</label>
-                    Minimum Value:
-                    <input type="range" min=0 max=5000 list="tickmarks" />
-                    Maximum Value:
-                    <input type="range" min=0 max=5000 list="tickmarks" />
-                    From 0 to 5000.
-                    <input type='submit' />
-                </form>
-            </aside><div>
-                <table cellspacing=0>
-                    <thead>
-                        <tr>
-                            <th>From</th>
-                            <th>To</th>
-                            <th>Transaction Name</th>
-                            <th>Transaction Date</th>
-                            <th>Transaction Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>The Sith</td>
-                            <td>AUiC</td>
-                            <td>Business Transaction</td>
-                            <td>January 4, 2016</td>
-                            <td>$49,000</td>
-                        </tr><tr>
-                            <td>Karim Abdel Hamid</td>
-                            <td>Business Name</td>
-                            <td>College Tuition</td>
-                            <td>June 4, 2016</td>
-                            <td>$47,000</td>
-                        </tr><tr>
-                            <td>Business Name</td>
-                            <td>Karim Abdel Hamid</td>
-                            <td>Reimbursement for College Tuition</td>
-                            <td>January 5, 2016</td>
-                            <td>$2,000</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section><section>
-            <aside>
-                <h2>Filter Ongoing Transactions</h2>
-                <form>
-                    <input type="search" placeholder="Search From" />
-                    <input type="search" placeholder="Search To" />
-                    <label for="searchdate"><input type="checkbox" id="searchdate"> Search by Date</label>
-                    <input type="date" />
-                    <input type="date" />
-                    <label for="searchamount"><input type="checkbox" id="searchamount"> Search by Amount</label>
-                    Minimum Value:
-                    <input type="range" min=0 max=5000 list="tickmarks" />
-                    Maximum Value:
-                    <input type="range" min=0 max=5000 list="tickmarks" />
-                    From 0 to 5000.
-                    <input type='submit' />
-                </form>
-            </aside><div>
-                <table cellspacing=0>
-                    <thead>
-                        <tr>
-                            <th>From</th>
-                            <th>To</th>
-                            <th>Transaction Name</th>
-                            <th>Start Date</th>
-                            <th>Finish Date</th>
-                            <th>Transaction Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Karim Abdel Hamid</td>
-                            <td>Business Name</td>
-                            <td>College Tuition</td>
-                            <td>January 4, 2016</td>
-                            <td>Ongoing</td>
-                            <td>$47,000</td>
-                        </tr><tr>
-                            <td>Badr Alkhassimi</td>
-                            <td>Business Name</td>
-                            <td>College Tuition</td>
-                            <td>January 4, 2012</td>
-                            <td>June 4, 2016</td>
-                            <td>$2,000</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+            </section>
     </main>
     	<script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
 	<script>
@@ -217,7 +120,7 @@
 			$("section").removeClass("show");
 			$(target).addClass("show");
             if (v == 0) {
-                window.location = "srs2.html";
+                window.location = "chat.html";
             }
 		});
 
