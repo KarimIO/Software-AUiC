@@ -12,20 +12,18 @@
 <body class='admin'>
     <nav>
         <select id="mainSel">
+            <option value="0">Leave Admin Page</option>
             <option value="1" selected>Select User</option>
             <option value="2">Manage Company</option>
-            <option value="3">View All Transactions</option>
-            <optgroup label="User: Karim Abdel Hamid">
-                <option value="4">About Karim Abdel Hamid</option>
-                <option value="5">Check Transactions</option>
-                <option value="6">Access History</option>
-            </optgroup>
+            <option value="3">View Messages</option>
+            <option value="4">View Transactions</option>
+            <option value="5">View Scheduled Transactions</option>
         </select>
     </nav>
     <main>
         <section class="show">
             <aside>
-                <h2>Filtering</h2>
+                <h2>Filter Users</h2>
                 <form>
                     <input type="search" placeholder="Search First Name" />
                     <input type="search" placeholder="Search Last Name" />
@@ -115,42 +113,198 @@
                     <div>
                         <label for='p1'><input type=checkbox id='p1'/>Manage Types of Users</label>
                         <label for='p2'><input type=checkbox id='p2'/>Add Users</label>
-                        <label for='p1'><input type=checkbox id='p1'/>Set Users' Types</label>
-                        <label for='p3'><input type=checkbox id='p3'/>Remove Users</label>
-                        <label for='p4'><input type=checkbox id='p4'/>Request AUiC Support</label>
-                        <label for='p5'><input type=checkbox id='p5'/>Audit Messages</label>
-                        <label for='p6'><input type=checkbox id='p6'/>Send Videos</label>
-                        <label for='p6'><input type=checkbox id='p7'/>Request Transaction</label>
-                        <label for='p6'><input type=checkbox id='p8'/>View Transactions</label>
-                        <label for='p6'><input type=checkbox id='p9'/>View All Transactions</label>
-                        <label for='p6'><input type=checkbox id='p10'/>Manage Transactions</label>
+                        <label for='p3'><input type=checkbox id='p3'/>Set Users' Types</label>
+                        <label for='p4'><input type=checkbox id='p4'/>Remove Users</label>
+                        <label for='p5'><input type=checkbox id='p5'/>Request AUiC Support</label>
+                        <label for='p6'><input type=checkbox id='p6'/>Audit Messages</label>
+                        <label for='p7'><input type=checkbox id='p7'/>Send Videos</label>
+                        <label for='p8'><input type=checkbox id='p8'/>Request Transaction</label>
+                        <label for='p9'><input type=checkbox id='p9'/>View Transactions</label>
+                        <label for='p10'><input type=checkbox id='p10'/>View All Transactions</label>
+                        <label for='p11'><input type=checkbox id='p11'/>Manage Transactions</label>
+                        <label for='p12'><input type=checkbox id='p12'/>Send Media</label>
+                        <label for='p13'><input type=checkbox id='p13'/>Video Call</label>
+                        <label for='p14'><input type=checkbox id='p14'/>Phone Call</label>
                     </div>
                 </fieldset>
             </form>
+        </section><section>
+            <aside>
+                <h2>Filter Messages</h2>
+                <form>
+                    <input type="search" placeholder="Search From" />
+                    <input type="search" placeholder="Search To" />
+                    <label for="searchdate"><input type="checkbox" id="searchdate"> Search by Date</label>
+                    <input type="date" />
+                    <input type="date" />
+                    <label for="searchamount"><input type="checkbox" id="searchamount"> Search by Amount</label>
+                    <input type='submit' />
+                </form>
+                <hr />
+                <button>View Messages</button>
+                <button>Remove Message from Server</button>
+            </aside><div>
+                <table cellspacing=0>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Date</th>
+                            <th>View Message</th>
+                            <th><input type="checkbox" /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Karim Abdel Hamid</td>
+                            <td>Kareem Farid</td>
+                            <td>Dec 9, 2017</td>
+                            <td><a href="javascript:alert('Message')">View Message</a></td>
+                            <td><input type="checkbox" /></td>
+                        </tr><tr>
+                            <td>Kareem Farid</td>
+                            <td>Karim Abdel Hamid</td>
+                            <td>Dec 9, 2017</td>
+                            <td><a href="javascript:alert('Message')">View Message</a></td>
+                            <td><input type="checkbox" /></td>
+                        </tr><tr>
+                            <td>Esraa</td>
+                            <td>Badr</td>
+                            <td>Dec 7, 2017</td>
+                            <td><a href="javascript:alert('Message')">View Message</a></td>
+                            <td><input type="checkbox" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section><section>
+            <aside>
+                <h2>Filter Transactions</h2>
+                <form>
+                    <input type="search" placeholder="Search From" />
+                    <input type="search" placeholder="Search To" />
+                    <label for="searchdate"><input type="checkbox" id="searchdate"> Search by Date</label>
+                    <input type="date" />
+                    <input type="date" />
+                    <label for="searchamount"><input type="checkbox" id="searchamount"> Search by Amount</label>
+                    Minimum Value:
+                    <input type="range" min=0 max=5000 list="tickmarks" />
+                    Maximum Value:
+                    <input type="range" min=0 max=5000 list="tickmarks" />
+                    From 0 to 5000.
+                    <input type='submit' />
+                </form>
+            </aside><div>
+                <table cellspacing=0>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Transaction Name</th>
+                            <th>Transaction Date</th>
+                            <th>Transaction Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Karim Abdel Hamid</td>
+                            <td>Business Name</td>
+                            <td>College Tuition</td>
+                            <td>January 4, 2016</td>
+                            <td>$49,000</td>
+                        </tr><tr>
+                            <td>Karim Abdel Hamid</td>
+                            <td>Business Name</td>
+                            <td>College Tuition</td>
+                            <td>June 4, 2016</td>
+                            <td>$47,000</td>
+                        </tr><tr>
+                            <td>Business Name</td>
+                            <td>Karim Abdel Hamid</td>
+                            <td>Reimbursement for College Tuition</td>
+                            <td>January 5, 2016</td>
+                            <td>$2,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section><section>
+            <aside>
+                <h2>Filter Ongoing Transactions</h2>
+                <form>
+                    <input type="search" placeholder="Search From" />
+                    <input type="search" placeholder="Search To" />
+                    <label for="searchdate"><input type="checkbox" id="searchdate"> Search by Date</label>
+                    <input type="date" />
+                    <input type="date" />
+                    <label for="searchamount"><input type="checkbox" id="searchamount"> Search by Amount</label>
+                    Minimum Value:
+                    <input type="range" min=0 max=5000 list="tickmarks" />
+                    Maximum Value:
+                    <input type="range" min=0 max=5000 list="tickmarks" />
+                    From 0 to 5000.
+                    <input type='submit' />
+                </form>
+            </aside><div>
+                <table cellspacing=0>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Transaction Name</th>
+                            <th>Start Date</th>
+                            <th>Finish Date</th>
+                            <th>Transaction Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Karim Abdel Hamid</td>
+                            <td>Business Name</td>
+                            <td>College Tuition</td>
+                            <td>January 4, 2016</td>
+                            <td>Ongoing</td>
+                            <td>$47,000</td>
+                        </tr><tr>
+                            <td>Badr Alkhassimi</td>
+                            <td>Business Name</td>
+                            <td>College Tuition</td>
+                            <td>January 4, 2012</td>
+                            <td>June 4, 2016</td>
+                            <td>$2,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
-    	<script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
-	<script>
+    <script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
 		$("#mainSel").change(function(e) {
-			var target = "section:nth-child(" + $("#mainSel option:selected").val() + ")";
+            var v = $("#mainSel option:selected").val();
+			var target = "section:nth-child(" + v + ")";
 			$("section").removeClass("show");
 			$(target).addClass("show");
+            if (v == 0) {
+                window.location = "srs2.html";
+            }
 		});
 
         function checkChecks(e) {
-            if ($("td input:not(:checked)").length != 0) {
-                if ($("td input:checked").length != 0) {
-                    $("th input").prop("checked", false);
-                    $("th input").prop("indeterminate", true);
+            var table = $(this).parent().parent().parent().parent();
+            if (table.find("td input:not(:checked)").length != 0) {
+                if (table.find("td input:checked").length != 0) {
+                    table.find("th input").prop("checked", false);
+                    table.find("th input").prop("indeterminate", true);
                 }
                 else {
-                    $("th input").prop("checked", false);
-                    $("th input").prop("indeterminate", false);
+                    table.find("th input").prop("checked", false);
+                    table.find("th input").prop("indeterminate", false);
                 }
             }
             else {
-                $("th input").prop("checked", true);
-                $("th input").prop("indeterminate", false);
+                table.find("th input").prop("checked", true);
+                table.find("th input").prop("indeterminate", false);
             }
         }
 		
@@ -161,13 +315,14 @@
             $("select").val(1);
         });
 		
-		$("#checkall").change(function(e) {
-            $("th input").prop("indeterminate", false);
+		$("th input").change(function(e) {
+            $(this).prop("indeterminate", false);
+            var table = $(this).parent().parent().parent().parent();
 			if (this.checked) {
-                $("td input:not(:checked)").click();
+                table.find("td input:not(:checked)").click();
             }
             else {
-                $("td input:checked").click();
+                table.find("td input:checked").click();
             }
 		});
 	</script>

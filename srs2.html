@@ -8,6 +8,9 @@
         <title>Document</title>
     </head>
     <body class="chatSide">
+        <div id='popupcontainer'>
+            <video></video>
+        </div>
         <nav>
             <h2>AUiC Chat</h2>
             <div>
@@ -38,7 +41,7 @@
                     <div></div>
                     <span>Transactions</span>
                     <aside class="shown">1</aside>
-                </a><a href="srs5.html">
+                </a><a href="settings.html">
                     <div></div>
                     <span>My Settings</span>
                 </a>
@@ -60,13 +63,23 @@
                     </span>
                     <div class='submitted'>Sent 13:00 by Google Glass</div>
                 </div>
+                <div class='right'>
+                    <span class='task'>
+                        <input type=checkbox />
+                        Task: <a href="srs3.html">Wow</a>
+                    </span>
+                </div>
+                <div class='right'>
+                    <span class='media' style='padding-bottom: 56%; background-image: url(images/wallpaper.jpg);'></span>
+                </div>
+                <div class='right'><span><a href="srs3.html">Requested Payment of 2000LE</a></span></div>
             </section><section class="chatsubmit">
                 <textarea></textarea><button onclick="showAttach()" id='chatSide'></button>
                 <div id="attachMenu" class="hideAttach">
-                    <button>Phone</button>
-                    <button>Video</button>
+                    <button>Phone Call</button>
+                    <button>Video Call</button>
                     <button>Image</button>
-                    <button>Send Money</button>
+                    <button>Request Transaction</button>
                     <button onclick="hideAttach()" id='cancelAttach'>X</button>
                 </div>
             </section>

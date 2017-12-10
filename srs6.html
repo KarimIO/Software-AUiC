@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="stylesheet/main.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body class='admin'>
+    <nav>
+        <select id="mainSel">
+            <option value="0">Leave Admin Page</option>
+            <option value="1" selected>List Companies</option>
+            <option value="2">Tickets</option>
+            <option value="3">View Transactions</option>
+            <option value="4">View Scheduled Transactions</option>
+        </select>
+    </nav>
+    <main>
+        <section class="show">
+            <aside>
+                <h2>Filter Companies</h2>
+                <form>
+                    <input type="search" placeholder="Search First Name" />
+                    <input type="search" placeholder="Search Last Name" />
+                    <input type="search" placeholder="Search Phone Number" />
+                    <fieldset>
+                        <legend>Position</legend>
+                        <input type="checkbox" id='cp1'><label for='cp1'>AUiC</label><br />
+                        <input type="checkbox" id='cp2'><label for='cp2'>Employee</label><br />
+                        <input type="checkbox" id='cp3'><label for='cp3'>Clients</label><br />
+                    </fieldset>
+                    <input type='submit' />
+                </form>
+                <hr />
+                <button>Remove Account(s)</button>
+            </aside><div>
+                <table cellspacing=0>
+                    <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th>Company Email</th>
+                            <th><input id="checkall" type="checkbox" /></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AUC Cairo</td>
+                            <td>admin@aucegypt.edu</td>
+                            <td><input type="checkbox" /></td>
+                        </tr><tr>
+                            <td>The Sith</td>
+                            <td>sidious@thesith.net</td>
+                            <td><input type="checkbox" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section><section>
+                <aside>
+                    <h2>Filter Tickets</h2>
+                    <form>
+                        <input type="search" placeholder="Search From" />
+                        <input type="search" placeholder="Search To" />
+                        <label for="searchdate"><input type="checkbox" id="searchdate"> Search by Date</label>
+                        <input type="date" />
+                        <input type="date" />
+                        <label for="searchamount"><input type="checkbox" id="searchamount"> Search by Amount</label>
+                        <input type='submit' />
+                    </form>
+                    <hr />
+                    <button>View Messages</button>
+                    <button>Remove Message from Server</button>
+                </aside><div>
+                    <table cellspacing=0>
+                        <thead>
+                            <tr>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Date</th>
+                                <th>View Message</th>
+                                <th><input type="checkbox" /></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Karim Abdel Hamid</td>
+                                <td>Kareem Farid</td>
+                                <td>Dec 9, 2017</td>
+                                <td><a href="javascript:alert('Message')">View Message</a></td>
+                                <td><input type="checkbox" /></td>
+                            </tr><tr>
+                                <td>Kareem Farid</td>
+                                <td>Karim Abdel Hamid</td>
+                                <td>Dec 9, 2017</td>
+                                <td><a href="javascript:alert('Message')">View Message</a></td>
+                                <td><input type="checkbox" /></td>
+                            </tr><tr>
+                                <td>Esraa</td>
+                                <td>Badr</td>
+                                <td>Dec 7, 2017</td>
+                                <td><a href="javascript:alert('Message')">View Message</a></td>
+                                <td><input type="checkbox" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section><section>
+            <aside>
+                <h2>Filter Transactions</h2>
+                <form>
+                    <input type="search" placeholder="Search From" />
+                    <input type="search" placeholder="Search To" />
+                    <label for="searchdate"><input type="checkbox" id="searchdate"> Search by Date</label>
+                    <input type="date" />
+                    <input type="date" />
+                    <label for="searchamount"><input type="checkbox" id="searchamount"> Search by Amount</label>
+                    Minimum Value:
+                    <input type="range" min=0 max=5000 list="tickmarks" />
+                    Maximum Value:
+                    <input type="range" min=0 max=5000 list="tickmarks" />
+                    From 0 to 5000.
+                    <input type='submit' />
+                </form>
+            </aside><div>
+                <table cellspacing=0>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Transaction Name</th>
+                            <th>Transaction Date</th>
+                            <th>Transaction Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>The Sith</td>
+                            <td>AUiC</td>
+                            <td>Business Transaction</td>
+                            <td>January 4, 2016</td>
+                            <td>$49,000</td>
+                        </tr><tr>
+                            <td>Karim Abdel Hamid</td>
+                            <td>Business Name</td>
+                            <td>College Tuition</td>
+                            <td>June 4, 2016</td>
+                            <td>$47,000</td>
+                        </tr><tr>
+                            <td>Business Name</td>
+                            <td>Karim Abdel Hamid</td>
+                            <td>Reimbursement for College Tuition</td>
+                            <td>January 5, 2016</td>
+                            <td>$2,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section><section>
+            <aside>
+                <h2>Filter Ongoing Transactions</h2>
+                <form>
+                    <input type="search" placeholder="Search From" />
+                    <input type="search" placeholder="Search To" />
+                    <label for="searchdate"><input type="checkbox" id="searchdate"> Search by Date</label>
+                    <input type="date" />
+                    <input type="date" />
+                    <label for="searchamount"><input type="checkbox" id="searchamount"> Search by Amount</label>
+                    Minimum Value:
+                    <input type="range" min=0 max=5000 list="tickmarks" />
+                    Maximum Value:
+                    <input type="range" min=0 max=5000 list="tickmarks" />
+                    From 0 to 5000.
+                    <input type='submit' />
+                </form>
+            </aside><div>
+                <table cellspacing=0>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Transaction Name</th>
+                            <th>Start Date</th>
+                            <th>Finish Date</th>
+                            <th>Transaction Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Karim Abdel Hamid</td>
+                            <td>Business Name</td>
+                            <td>College Tuition</td>
+                            <td>January 4, 2016</td>
+                            <td>Ongoing</td>
+                            <td>$47,000</td>
+                        </tr><tr>
+                            <td>Badr Alkhassimi</td>
+                            <td>Business Name</td>
+                            <td>College Tuition</td>
+                            <td>January 4, 2012</td>
+                            <td>June 4, 2016</td>
+                            <td>$2,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    	<script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
+	<script>
+		$("#mainSel").change(function(e) {
+            var v = $("#mainSel option:selected").val();
+			var target = "section:nth-child(" + v + ")";
+			$("section").removeClass("show");
+			$(target).addClass("show");
+            if (v == 0) {
+                window.location = "srs2.html";
+            }
+		});
+
+        function checkChecks(e) {
+            var table = $(this).parent().parent().parent().parent();
+            if (table.find("td input:not(:checked)").length != 0) {
+                if (table.find("td input:checked").length != 0) {
+                    table.find("th input").prop("checked", false);
+                    table.find("th input").prop("indeterminate", true);
+                }
+                else {
+                    table.find("th input").prop("checked", false);
+                    table.find("th input").prop("indeterminate", false);
+                }
+            }
+            else {
+                table.find("th input").prop("checked", true);
+                table.find("th input").prop("indeterminate", false);
+            }
+        }
+		
+		$("td input").change(checkChecks);
+
+        $(document).ready(function(e) {
+            checkChecks(e);
+            $("select").val(1);
+        });
+		
+		$("th input").change(function(e) {
+            $(this).prop("indeterminate", false);
+            var table = $(this).parent().parent().parent().parent();
+			if (this.checked) {
+                table.find("td input:not(:checked)").click();
+            }
+            else {
+                table.find("td input:checked").click();
+            }
+		});
+	</script>
+</body>
+
+</html>

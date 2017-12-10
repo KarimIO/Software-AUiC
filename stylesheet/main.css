@@ -1,4 +1,4 @@
-#registerForm {
+#forgotForm {
     display: none;    
 }
 
@@ -25,6 +25,8 @@ body {
 
 body.loginPage {
     background-color: #a8bbcc;
+    background-image: url(../images/wallpaper.jpg);
+    background-size: cover;
 }
 
 a {
@@ -153,6 +155,12 @@ main.chat {
     padding: 8px;
 }
 
+.chatlog div .task a, 
+.chatlog div .task input {
+    display: inline-block;
+    width: auto;
+}
+
 .chatlog div.right {
     text-align: right;
 }
@@ -278,6 +286,84 @@ main.chat {
 }
 
 /* Workflows */
+#popupcontainer {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    background-image: url(../images/hypnotize.png);
+    background-size: 200px;
+    background-position: center;
+}
+
+#popupcontainer > div {
+    position: relative;
+    z-index: 100;
+    width: calc(100% - 2em);
+    height: calc(100% - 2em);
+    border-radius: 1em;
+    margin: 1em;
+    background: #eee;
+    box-sizing: border-box;
+    padding: 1em;
+    box-shadow: 0 0 16px black;
+}
+
+#popupcontainer input {
+    box-sizing: border-box;
+    padding: 0.5em;
+    margin: 0;
+    font-size: 110%;
+    background: white;
+    border: none;
+}
+
+#popupcontainer input[type=text] {
+    width: 100%;
+    font-size: 120%;
+    margin-bottom: 1em;
+    padding: 8px;
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    border-radius: 0.25em;
+}
+
+#popupcontainer div > div {
+    width: 100%;
+    border: none;
+    background: none;
+    margin-top: 1em;
+    border-radius: 0.25em;
+    overflow: hidden;
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+}
+
+#popupcontainer input[type=button], #popupcontainer input[type=submit] {
+    width: 50%;
+    background: #ccc;
+    border: none;
+}
+
+#popupcontainer input[type=button] {
+    background: #369;
+    color: white;
+}
+
+#popupcontainer textarea {
+    width: 100%;
+    font-size: 110%;
+    height: calc(100% - 8.2em);
+    box-sizing: border-box;
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    background: white;
+    padding: 1em;
+    border: none;
+    border-radius: 0.25em;
+    resize: none;
+}
+
 .blueBackPage {
     background-color: #a8bbcc;
 }
@@ -305,6 +391,29 @@ main.workflows {
     overflow-y: auto;
     vertical-align: top;
     white-space: normal;
+}
+
+.workflows section.settings {
+    background: rgba(255,255,255,0.3);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    width: calc(100% - 32px);
+}
+
+.workflows section.settings button {
+    border: none;
+    background: #eee;
+    width: 100%;
+    padding: 2em;
+    margin: 0;
+    font-size: 120%;
+}
+
+.workflows section.settings button:first-child {
+    background: #369;
+    color: white;
 }
 
 @media screen and (max-width: 440px) {
@@ -335,7 +444,7 @@ main.workflows {
     border-bottom: 1px solid #eee;
 }
 
-.workflows > section > label {
+.workflows > section > span {
     display: block;
     padding: 8px;
     border-radius: 8px;
@@ -344,7 +453,7 @@ main.workflows {
     transition: 0.5s ease background;
 }
 
-.workflows > section > label:hover {
+.workflows > section > span:hover {
     background: #eee;
 }
 
@@ -360,6 +469,7 @@ main.workflows {
     border-radius: 8px;
     margin: 8px 0;
     transition: 0.5s ease background;
+    display: inline-block;
 }
 
 .workflows > section input[type=text] {
@@ -374,7 +484,7 @@ main.workflows {
 .workflows > section input[type=submit] {
     margin-left: 8px;
     padding: 8px 4px;
-    width: 64px;
+    width: 58px;
     background: rgb(119, 169, 216);
 }
 
@@ -382,7 +492,7 @@ main.workflows {
     background: rgb(73, 116, 156);
 }
 
-.workflows > section > label > div {
+.workflows > section > span > div {
     float: right;
     margin-top: -4px;
     margin-left: 4px;
@@ -396,11 +506,11 @@ main.workflows {
     opacity: 0;
 }
 
-.workflows > section > label:hover > div {
+.workflows > section > span:hover > div {
     opacity: 1;
 }
 
-.workflows > section > label > div:hover {
+.workflows > section > span > div:hover {
     background-color: rgb(119, 169, 216);
 }
 
@@ -658,6 +768,7 @@ hr {
     padding: 0.6em;
     margin: 0.5em 0;
     border-radius: 4px;
+    box-sizing: border-box;
     border: 1px solid #ddd;
 }
 
@@ -670,6 +781,7 @@ hr {
     display: inline-block;
     width: 70%;
     height: 100%;
+    overflow: auto;
 }
 
 .admin table {
@@ -681,6 +793,7 @@ hr {
     .admin section {
         overflow-x: hidden;
         overflow-y: auto;
+        height: auto;
     }
     .admin aside {
         width: 100%;
@@ -688,7 +801,8 @@ hr {
     }
     .admin div {
         width: 100%;
-        overflow: hidden;
+        height: auto;
+        overflow: auto;
     }
     .admin table {
         width: 100%;
@@ -735,6 +849,7 @@ hr {
 }
 
 .admin .manage fieldset div {
+    width: 100%;
     -webkit-column-width: 15em; /* Chrome, Safari, Opera */
     -moz-column-width: 15em; /* Firefox */
     column-width: 15em;
@@ -750,4 +865,10 @@ hr {
 
 .admin .manage label {
     display: block;
+}
+
+
+.media {
+    width: 80%;
+    background-size: cover !important;
 }
